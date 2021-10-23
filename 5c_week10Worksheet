@@ -1,0 +1,19 @@
+//--Acepta cadenas de longitud impar
+//--Cadena vacia o número cualquiera de ab´s
+name: 5c Taller semana 10
+init: q0
+accept: qA
+
+//---Aceptará las vacias
+//--Transiciones salientes de q0
+q0,_
+qA,_,>
+
+q0,a
+q1,_,>
+//--Fin Transiciones salientes de q0
+
+//--Transiciones salientes de q1
+q1,b
+q0,_,>
+//--Fin Transiciones salientes de q1
