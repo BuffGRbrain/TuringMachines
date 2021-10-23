@@ -1,0 +1,51 @@
+//--Acepta cadenas de longitud impar
+//--q1 y q2 se encargan de hacer el 2n (Con un ciclo)
+//--El q0 del +1, aceptando así cualquier cadena de longitud impar(2n+1).
+name: 5a Taller semana 10
+init: q0
+accept: qA
+
+//---Aceptará las vacias
+//--Transiciones salientes de q0
+q0,a
+q1,_,>
+
+q0,b
+q1,_,>
+
+q0,c
+q1,_,>
+
+q0,_
+qpeta,_,-
+
+//--Fin Transiciones salientes de q0
+
+//--Transiciones salientes de q1
+q1,a
+q2,_,>
+
+q1,b
+q2,_,>
+
+q1,c
+q2,_,>
+
+q1,_
+qA,_,-
+
+//--Fin Transiciones salientes de q1
+
+//--Transiciones salientes de q2
+q2,a
+q1,_,>
+
+q2,b
+q1,_,>
+
+q2,c
+q1,_,>
+
+q2,_
+qpeta,_,-
+//--Fin Transiciones salientes de q2
