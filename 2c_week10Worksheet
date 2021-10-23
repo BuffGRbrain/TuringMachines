@@ -1,0 +1,22 @@
+//---Asuma Σ = {a, b} y Γ = {a, b, } y w ∈ Σ*
+//---La subrutina requerida es que, comenzando en q0w, 
+//---La unidad de control busca la primera a en w.
+
+name: 2c Taller semana 10
+init: q0w
+accept: qA
+
+q0w,a
+q0w,a,>
+
+q0w,b
+q0w,b,>
+
+q0w,_
+qw0,_,<
+
+qw0,a
+qw0,a,<
+
+qw0,b
+qA,b,-
