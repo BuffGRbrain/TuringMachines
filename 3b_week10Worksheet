@@ -1,0 +1,40 @@
+//--Implemente en el simulador el algoritmo implementado por cada uno de los
+//--siguientes diagramas de transiciones (asuma Σ = {a, b} y Γ = {a, b, X, }). En cada caso,
+//--describa el funcionamiento de la unidad de control sobre la cinta:
+
+name: 3b Taller semana 10
+init: q0
+accept: qA
+
+//--Transiciones salientes de q0
+q0,b
+q0,b,>
+
+q0,a
+q1,b,>
+//--Fin Transiciones salientes de q0
+
+//--Transiciones salientes de q1
+q1,a
+q1,a,>
+
+q1,b
+q1,b,>
+
+q1,_
+q2,X,< 
+//--Fin Transiciones salientes de q1
+
+//--Transiciones salientes de q2
+q2,a
+q1,b,>
+
+q2,_
+qA,_,-
+
+q2,X
+q2,X,< 
+
+q2,b
+q2,b,< 
+//--Fin Transiciones salientes de q2
