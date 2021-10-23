@@ -1,0 +1,54 @@
+//--Acepta cadenas de longitud impar
+//--Cadena que tiene 3 a´s
+name: 5b Taller semana 10
+init: q0
+accept: qA
+
+//---Aceptará las vacias
+//--Transiciones salientes de q0
+q0,a
+q1,X,>
+
+q0,b
+q0,_,>
+
+q0,c
+q0,_,>
+//--Fin Transiciones salientes de q0
+
+//--Transiciones salientes de q1
+q1,a
+q2,X,>
+
+q1,b
+q1,_,>
+
+q1,c
+q1,_,>
+
+//--Fin Transiciones salientes de q1
+
+//--Transiciones salientes de q2
+q2,a
+q3,X,>
+
+q2,b
+q2,_,>
+
+q2,c
+q2,_,>
+//--Fin Transiciones salientes de q2
+
+//--Transiciones salientes de q2
+q3,a
+qPETA,a,>
+
+q3,b
+q3,_,>
+
+q3,c
+q3,_,>
+
+q3,_
+qA,_,-
+//--Fin Transiciones salientes de q2
