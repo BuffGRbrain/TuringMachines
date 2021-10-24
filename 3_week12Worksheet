@@ -1,0 +1,40 @@
+//--Ejercicio 3: (tm de dos cintas) Asuma Σ = {0, 1} y Γ = { , 0, 1, #, X}.
+//--Input w#v
+name: 3 Taller semana 12 
+init: q0
+accept: qA
+
+//---Aceptará las vacias
+//--Transiciones salientes de q0
+q0,1,_
+q0,1,_,>,-
+
+q0,0,_
+q0,0,_,>,-
+
+q0,_,_
+q0,_,_,>,-
+
+q0,#,_
+q0,#,_,>,-
+
+q0,X,_
+q1,X,_,>,-
+//--Fin Transiciones salientes de q0
+
+///--Transiciones salientes de q1
+q1,1,_
+q1,1,1,>,>
+
+q1,0,_
+q1,0,0,>,>
+
+q1,#,_
+q1,#,#,>,>
+
+q1,X,_
+q1,X,X,>,>
+
+q1,_,_
+qA,_,_,-,-
+//--Fin Transiciones salientes de q1
