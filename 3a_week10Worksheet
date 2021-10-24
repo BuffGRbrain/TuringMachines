@@ -31,3 +31,11 @@ qA,_,-
 q2,a
 q3,a,< 
 //--Fin Transiciones salientes de q2
+
+//--Transiciones salientes de q3
+q3,a
+q3,a,<
+
+q3,X
+q0,X,>
+//--Fin Transiciones salientes de q3
