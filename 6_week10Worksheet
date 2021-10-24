@@ -1,0 +1,41 @@
+//--CANTIDAD DE 1´S SEPARADOS POR X
+//--Resultado multiplicar las cantidades
+name: 6 Taller semana 10 - Multiplicador
+init: q0
+accept: qA
+
+//---Aceptará las vacias
+//--Transiciones salientes de q0
+q0,1,_
+q1,_,_,>,-
+
+q0,X,_
+qA,X,_,-,-
+//--Fin Transiciones salientes de q0
+
+///--Transiciones salientes de q1
+q1,1,_
+q1,1,_,>,-
+
+q1,X,_
+q2,X,_,>,-
+//--Fin Transiciones salientes de q1
+
+///--Transiciones salientes de q2
+q2,1,_
+q2,1,1,>,>
+
+q2,_,_
+q3,_,_,<,-
+//--Fin Transiciones salientes de q2
+
+///--Transiciones salientes de q3
+q3,1,_
+q3,1,_,<,-
+
+q3,X,_
+q3,X,_,<,-
+
+q3,_,_
+q0,_,_,>,-
+//--Fin Transiciones salientes de q3
