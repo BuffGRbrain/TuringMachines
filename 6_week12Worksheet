@@ -1,0 +1,109 @@
+//--(tm de dos cintas) Asuma Σ = {0, 1} y Γ = {_, 0, 1, #, X}. Busca coincidencia
+//--Input
+name: 5 Taller semana 12 
+init: q0
+accept: qA
+
+//--Transiciones salientes de q0
+q0,1,_
+q0,1,_,>,-
+
+q0,0,_
+q0,0,_,>,-
+
+q0,_,_
+q0,_,_,>,-
+
+q0,X,_
+q0,X,_,>,-
+
+q0,#,_
+q1,_,_,>,-
+//--Fin Transiciones salientes de q0
+
+///--Transiciones salientes de q1
+q1,1,_
+q1,_,1,>,>
+
+q1,0,_
+q1,_,0,>,>
+
+q1,#,_
+q1,_,#,>,>
+
+q1,X,_
+q1,_,X,>,>
+
+q1,_,_
+q2,_,_,-,-
+//--Fin Transiciones salientes de q1 Aquí termina la copia
+
+//--Mini ciclo para volver al inicio y comparar
+///--Transiciones salientes de q2
+q2,_,_
+q2,_,_,<,<
+
+q2,0,_
+q2,0,_,-,<
+
+q2,1,_
+q2,1,_,-,<
+
+q2,X,_
+q2,X,_,-,<
+
+q2,_,0
+q2,_,0,<,-
+
+q2,_,1
+q2,_,1,<,-
+
+q2,_,X
+q2,_,X,<,-
+
+q2,1,1
+q3,1,_,<,<
+
+q2,0,0
+q3,0,_,<,<
+
+//--q2,X,X
+//--q3,X,_,<,<
+//--Fin Transiciones salientes de q2--Ambas apuntan al último Símbolo
+
+///--Transiciones salientes de q3
+q3,1,1
+q3,1,_,<,<
+
+q3,0,0
+q3,0,_,<,<
+
+q3,_,X
+qA,_,_,-,-
+//--Si son diferentes nos vamos a q4 para reacomododar y volver a comparar
+q3,0,X
+q4,0,_,>,<
+
+q3,1,X
+q4,1,_,>,<
+//--Fin Transiciones salientes de q3
+
+///--Transiciones salientes de q4
+q4,1,1
+q4,1,1,>,-
+
+q4,0,1
+q4,0,1,>,-
+
+q4,0,0
+q4,0,0,>,-
+
+q4,0,1
+q4,0,1,>,-
+
+q4,_,0
+q4,_,0,<,-
+
+q4,_,1
+q3,_,1,<,-
+//--Fin Transiciones salientes de q4
