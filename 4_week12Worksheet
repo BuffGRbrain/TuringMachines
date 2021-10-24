@@ -1,0 +1,86 @@
+//--(tm de dos cintas) Asuma Σ = {0, 1} y Γ = {_, 0, 1, #, X}.
+//--Input
+name: 4 Taller semana 12 
+init: q0
+accept: qA
+
+//--Transiciones salientes de q0
+q0,1,_
+q0,1,_,>,-
+
+q0,0,_
+q0,0,_,>,-
+
+q0,_,_
+q0,_,_,>,-
+
+q0,X,_
+q0,X,_,>,-
+
+q0,#,_
+q1,_,_,>,-
+//--Fin Transiciones salientes de q0
+
+///--Transiciones salientes de q1
+q1,1,_
+q1,_,1,>,>
+
+q1,0,_
+q1,_,0,>,>
+
+q1,#,_
+q1,_,#,>,>
+
+q1,X,_
+q1,_,X,>,>
+
+q1,_,_
+q2,_,_,-,-
+//--Fin Transiciones salientes de q1
+
+//--Mini ciclo para volver al inicio y comparar
+///--Transiciones salientes de q2
+q2,_,_
+q2,_,_,<,<
+
+q2,0,_
+q2,0,_,-,<
+
+q2,1,_
+q2,1,_,-,<
+
+q2,X,_
+q2,X,_,-,<
+
+q2,_,0
+q2,_,0,<,-
+
+q2,_,1
+q2,_,1,<,-
+
+q2,_,X
+q2,_,X,<,-
+
+q2,1,1
+q3,_,_,<,<
+
+q2,0,0
+q3,_,_,<,<
+
+q2,X,X
+q3,_,_,<,<
+//--Fin Transiciones salientes de q2
+
+///--Transiciones salientes de q3
+q3,1,1
+q3,_,_,<,<
+
+q3,0,0
+q3,_,_,<,<
+
+q3,X,X
+q3,_,_,<,<
+
+q3,_,_
+qA,_,_,-,-
+//--Fin Transiciones salientes de q3
